@@ -1,0 +1,10 @@
+La forma más fácil y simple de hacer esto es crear un archivo llamado .gitignore en el directorio raíz de tu proyecto. 
+Los archivos que incluyas aquí serán ignorados en todos los subdirectorios de tu proyecto, a menos que algún subdirectorio incluya su propio .gitignore. 
+La ventaja de esto es que tienes un solo lugar donde puedes configurar todos los archivos a ignorar en el proyecto, a diferencia de la opción svn:ignore de SVN 
+que tiene que ser configurada individualmente para cada carpeta. 
+Además, el archivo .gitignore puede estar a su vez incluído en el repositorio.
+Hay dos cosas que debes tener en cuenta cuando ignoras archivos: Primero, si un archivo ya está siendo versionado por Git, agregar dicho archivo a .gitignore no hará que Git deje de observarlo.
+ En este caso necesitarás ejecutar git rm --cached <file> para conservar el archivo y luego ignorarlo. En segundo lugar, los directorios vacíos no son tenidos en cuenta por Git. Si quieres que Git
+ tenga en cuenta a un directorio aún cuando éste está vacío, debes colocar algo dentro de él.
+ Normalmente con sólo ejecutar touch .gitignore es suficiente para lograr que Git tenga en cuenta a dicho directorio.
+
